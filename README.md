@@ -1,22 +1,15 @@
 # 800Storage Backend Assignment
 
 ## DB Diagram
----
 
-<object data="DB%20Diagram.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="DB%20Diagram.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="DB%20Diagram.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+![Diagram](./DB%20Diagram.png)
 
----
+Download the PDF to view it: <a href="DB%20Diagram.pdf">Download PDF</a>.</p>
 
 ## Endpoint Documentation
 
----
-
 ### BASE_URL
-> `http://localhost:8000`
+`http://localhost:8000`
 
 ---
 
