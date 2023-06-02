@@ -1,3 +1,5 @@
+sale_transaction_service.log
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar

@@ -54,9 +54,12 @@ public class ProductController {
 
         Product productToUpdate = optionalProduct.get();
 
-        productToUpdate.setName(updateProductInput.name())
-            .setDescription(updateProductInput.description())
-            .setCategory(updateProductInput.category());
+        if (updateProductInput.name() != null)
+            productToUpdate.setName(updateProductInput.name());
+        if (updateProductInput.description() != null)
+            productToUpdate.setDescription(updateProductInput.description());
+        if (updateProductInput.category() != null)
+            productToUpdate.setCategory(updateProductInput.category());
 
         Product productUpdated = productService.update(productToUpdate);
 

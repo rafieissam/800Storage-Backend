@@ -7,25 +7,25 @@ import jakarta.persistence.*;
 import java.util.Date;
 // import java.util.List;
 
-@Table(name = "products")
+@Table(name = "clients")
 @Entity
-public class Product {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private Integer id;
 
-    @Column()
-    private String name;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column()
-    private String description;
+    private String mobile;
 
-    @Column()
-    private String category;
-
-    // @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    // private List<SaleTransaction> transactions;
+    // @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    // private List<Sale> sales;
 
     @CreationTimestamp
     @Column(updatable = false, name = "created_at")
@@ -39,17 +39,21 @@ public class Product {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getCategory() {
-        return category;
+    public String getMobile() {
+        return mobile;
     }
+
+    // public List<Sale> getSales() {
+    //     return sales;
+    // }
 
     public Date getCreatedAt() {
         return createdAt;
@@ -59,43 +63,48 @@ public class Product {
         return updatedAt;
     }
 
-    public Product setId(Integer id) {
+    public Client setId(Integer id) {
         this.id = id;
         return this;
     }
 
-    public Product setName(String name) {
-        this.name = name;
+    public Client setFirstName(String firstName) {
+        this.firstName = firstName;
         return this;
     }
 
-    public Product setDescription(String description) {
-        this.description = description;
+    public Client setLastName(String lastName) {
+        this.lastName = lastName;
         return this;
     }
 
-    public Product setCategory(String category) {
-        this.category = category;
+    public Client setMobile(String mobile) {
+        this.mobile = mobile;
         return this;
     }
 
-    public Product setCreatedAt(Date createdAt) {
+    // public Client setSales(List<Sale> sales) {
+    //     this.sales = sales;
+    //     return this;
+    // }
+
+    public Client setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public Product setUpdatedAt(Date updatedAt) {
+    public Client setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Client{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", category=" + category +
+                ", first_name='" + firstName + '\'' +
+                ", last_name='" + lastName + '\'' +
+                ", mobile=" + mobile +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
